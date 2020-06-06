@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'my-blog',
-      script: './build/index.html',
+      script: './src/pages/index.js',
       args: 'one two',
       instances: 1,
       autorestart: true,
