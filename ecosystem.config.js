@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'myapp',
+      name: 'my-blog',
       script: './build/index.js',
       args: 'one two',
       instances: 1,
