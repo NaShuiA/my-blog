@@ -1,105 +1,124 @@
+const path = require("path");
+
 module.exports = {
-  title: '会飞的Bug',
-  tagline: 'Standing on Shoulders of Giants',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "会飞的Bug - 前端工程师",
+  tagline: "",
+  url: "https://www.nashuia.com",
+  baseUrl: "/",
+  favicon: "img/favicon.svg",
+  organizationName: "会飞的Bug", // Usually your GitHub org/user name.
+  projectName: "nashuia.com", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: "会飞的Bug",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: " 会飞的Bug",
+        src: "img/logo.svg",
       },
       links: [
+        { to: "/", label: "Blog", position: "right" },
+        // {
+        //   to: "docs/react-examples/01-react-props-buttons/index",
+        //   label: "React 示例",
+        //   position: "right",
+        // },
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/nashuia",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
+        // {
+        //   title: "Docs",
+        //   items: [
+        //     {
+        //       label: "Style Guide",
+        //       to: "docs/doc1"
+        //     },
+        //     {
+        //       label: "Second Doc",
+        //       to: "docs/doc2"
+        //     }
+        //   ]
+        // },
+        // {
+        //   title: "Community",
+        //   items: [
+        //     {
+        //       label: "Stack Overflow",
+        //       href: "https://stackoverflow.com/questions/tagged/docusaurus"
+        //     },
+        //     {
+        //       label: "Discord",
+        //       href: "https://discordapp.com/invite/docusaurus"
+        //     }
+        //   ]
+        // },
         {
-          title: 'Docs',
+          title: "Social",
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: "Blog",
+              to: "/",
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: "GitHub",
+              href: "https://github.com/nashuia",
+            },
+            {
+              label: "Bilibili 哔哩哔哩",
+              href: "https://space.bilibili.com/18489687",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "友情链接",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "虚位以待",
+              to: "https://nashuia.github.io/",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} 会飞的Bug Built with Docusaurus.`,
+      icp: "皖ICP备20010430号-1",
+    },
+    prism: {
+      darkTheme: require("prism-react-renderer/themes/vsDark"),
+      defaultLanguage: "javascript",
     },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
-        docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
+        // docs: {
+        //   sidebarPath: require.resolve("./sidebars.js"),
+        //   editUrl: "https://github.com/zxuqian/zxuqian.cn/tree/master/docs",
+        // },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          path: "./blog",
+          routeBasePath: "/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+        sitemap: {
+          cacheTime: 600 * 1000, // 600 sec - cache purge period
+          changefreq: "daily",
+          priority: 0.5,
         },
       },
     ],
+  ],
+  themes: [require.resolve("@docusaurus/theme-live-codeblock")],
+  plugins: [
+    path.resolve(__dirname, "./src/plugin/plugin-baidu-analytics"),
+    // path.resolve(__dirname, "./src/plugin/plugin-google-adsense"),
   ],
 };

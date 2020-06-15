@@ -1,6 +1,6 @@
 {
-  "name": "my-blog",
-  "version": "0.0.0",
+  "name": "zxuqian.cn",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "docusaurus start",
@@ -11,9 +11,12 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.56",
     "@docusaurus/preset-classic": "^2.0.0-alpha.56",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.56",
+    "@zxuqian/react-examples": "^0.1.4",
     "classnames": "^2.2.6",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "styled-components": "^5.0.1"
   },
   "browserslist": {
     "production": [
